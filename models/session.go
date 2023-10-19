@@ -8,7 +8,8 @@ import (
 
 type Session struct {
 	gorm.Model
-	UserID       uint
+	ClientID     uint   `gorm:"default:null"`
+	AgentID      uint   `gorm:"default:null"`
 	RefreshToken string `gorm:"type:char(60);unique"`
 	ExpDate      time.Time
 	UserAgent    string `gorm:"type:varchar(60)"`

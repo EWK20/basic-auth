@@ -17,7 +17,7 @@ func DBConnect() {
 		panic("Failed to connect to db")
 	}
 
-	db.AutoMigrate(&models.User{}, &models.Session{}, &models.Stage{}, &models.Project{}, &models.PhenixTeam{}, &models.Checklist{})
+	db.AutoMigrate(&models.Client{}, &models.Session{}, &models.Stage{}, &models.Project{}, &models.PhenixAgent{}, &models.Checklist{})
 
 	DB = db
 }

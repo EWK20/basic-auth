@@ -15,22 +15,28 @@ func init() {
 func main() {
 	r := gin.Default()
 	auth := r.Group("/v1/auth")
-	api := r.Group("/v1/api")
-	api.Use(middleware.RequireAuth)
+	cli := auth.Group("/cli")
+	adm := auth.Group("/adm")
 
 	//! Routes
 
-	//* Create new client with temp password
-	auth.POST("/new-user", controllers.CreateUser)
+	//* Create new user with temp password
+	// auth.POST("/new-user", controllers.CreateUser)
 
-	//* Login
-	auth.POST("/login", controllers.Login)
+	//* Client Login
+	cli.POST("/login", controllers.ClientLogin)
 
-	//* Set new paasword
-	api.POST("/set-pass", controllers.ChangePassword)
+	//* Client change password
+	cli.POST("/set-pass", middleware.RequireClientAuth, controllers.ClientChangePassword)
 
-	//* Validate auth
-	api.GET("/validate", controllers.Validate)
+	//* Agent Login
+	adm.POST("/login", controllers.AgentLogin)
+
+	//* Agent change password
+	adm.POST("/set-pass", middleware.RequireAgentAuth, controllers.AgentChangePassword)
+
+	//* Health Check
+	r.GET("/health-check")
 
 	r.Run()
 }

@@ -24,7 +24,8 @@ type Project struct {
 	Handover            string `gorm:"type:varchar(1024)"`
 	Status              string `gorm:"type:varchar(20)"`
 	DateCompleted       time.Time
-	PhenixTeam          []PhenixTeam `gorm:"many2many:project_team;"`
+	ProjectTeam         []*PhenixAgent `gorm:"many2many:project_team;"`
+	Clients             []*Client      `gorm:"many2many:client_projects;"`
 	Stages              []Stage
 	Checklist           []Checklist
 }
