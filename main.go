@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/PhenixSolutions/phenix-auth/controllers"
-	"github.com/PhenixSolutions/phenix-auth/initializers"
-	"github.com/PhenixSolutions/phenix-auth/middleware"
+	"github.com/EWK20/basic-auth/controllers"
+	"github.com/EWK20/basic-auth/initializers"
+	"github.com/EWK20/basic-auth/middleware"
 	"github.com/gin-gonic/gin"
 )
 

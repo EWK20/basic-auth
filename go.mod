@@ -1,4 +1,4 @@
-module github.com/PhenixSolutions/phenix-auth
+module github.com/EWK20/basic-auth
 
 go 1.18
 

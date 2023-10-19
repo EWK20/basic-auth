@@ -3,7 +3,7 @@ package initializers
 import (
 	"os"
 
-	"github.com/PhenixSolutions/phenix-auth/models"
+	"github.com/EWK20/basic-auth/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

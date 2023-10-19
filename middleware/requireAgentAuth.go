@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/PhenixSolutions/phenix-auth/initializers"
-	"github.com/PhenixSolutions/phenix-auth/models"
+	"github.com/EWK20/basic-auth/initializers"
+	"github.com/EWK20/basic-auth/models"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 )
